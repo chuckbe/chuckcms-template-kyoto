@@ -43,20 +43,20 @@ class ChuckcmsTemplateKyotoTableSeeder extends Seeder
         $css['magnificpopup']['href'] = 'chuckbe/chuckcms-template-kyoto/css/magnific-popup.css';
         $css['magnificpopup']['asset'] = 'true';
 
-        $css['responsive']['href'] = 'chuckbe/chuckcms-template-kyoto/css/kyoto/css/menu.css';
-        $css['responsive']['asset'] = 'true';
+        $css['kyotomenu']['href'] = 'chuckbe/chuckcms-template-kyoto/css/kyoto/css/menu.css';
+        $css['kyotomenu']['asset'] = 'true';
 
         $css['responsive']['href'] = 'chuckbe/chuckcms-template-kyoto/css/responsive.css';
         $css['responsive']['asset'] = 'true';
 
-        $css['responsive']['href'] = 'chuckbe/chuckcms-template-kyoto/css/kyoto/kyoto.css';
-        $css['responsive']['asset'] = 'true';
+        $css['kyoto']['href'] = 'chuckbe/chuckcms-template-kyoto/css/kyoto/kyoto.css';
+        $css['kyoto']['asset'] = 'true';
 
-        $css['responsive']['href'] = 'chuckbe/chuckcms-template-kyoto/css/kyoto/css/fonts.css';
-        $css['responsive']['asset'] = 'true';
+        $css['fonts']['href'] = 'chuckbe/chuckcms-template-kyoto/css/kyoto/css/fonts.css';
+        $css['fonts']['asset'] = 'true';
 
         $css['colors']['href'] = 'chuckbe/chuckcms-template-kyoto/css/colors.php?color=e41c34';
-        $css['colors']['asset'] = 'false';
+        $css['colors']['asset'] = 'true';
         
         $js = []; 
         $js['jquery']['href'] = 'chuckbe/chuckcms-template-kyoto/js/jquery.js';
@@ -65,11 +65,11 @@ class ChuckcmsTemplateKyotoTableSeeder extends Seeder
         $js['plugins']['href'] = 'chuckbe/chuckcms-template-kyoto/js/plugins.js';
         $js['plugins']['asset'] = 'true';
 
-        $js['plugins']['href'] = 'chuckbe/chuckcms-template-kyoto/js/hover3d.js';
-        $js['plugins']['asset'] = 'true';
+        $js['hover3d']['href'] = 'chuckbe/chuckcms-template-kyoto/js/hover3d.js';
+        $js['hover3d']['asset'] = 'true';
 
-        $js['plugins']['href'] = 'chuckbe/chuckcms-template-kyoto/js/menu-easing.js';
-        $js['plugins']['asset'] = 'true';
+        $js['menu-easing']['href'] = 'chuckbe/chuckcms-template-kyoto/js/menu-easing.js';
+        $js['menu-easing']['asset'] = 'true';
 
         $js['functions']['href'] = 'chuckbe/chuckcms-template-kyoto/js/functions.js';
         $js['functions']['asset'] = 'true';
@@ -77,9 +77,9 @@ class ChuckcmsTemplateKyotoTableSeeder extends Seeder
         $json = [];
 
         // create template
-        Template::create([
-            'name' => 'ChuckCMS Template Kyoto',
-            'slug' => 'chuckcms-template-kyoto',
+        Template::updateOrCreate(
+            ['slug' => 'chuckcms-template-kyoto'],
+            ['name' => 'ChuckCMS Template Kyoto',
             'hintpath' => 'chuckcms-template-kyoto',
             'path' => 'chuckbe/chuckcms-template-kyoto',
             'type' => 'default',

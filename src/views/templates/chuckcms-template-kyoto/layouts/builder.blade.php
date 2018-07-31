@@ -25,16 +25,18 @@
 
 </head>
 
-<body class="stretched">
+<body class="stretched" data-loader-html="<div><img src='{{ URL::to('/') }}/chuckbe/chuckcms-template-kyoto/images/icons/loader.svg' alt='Loader'></div>">
 
 	<!-- Document Wrapper
 	============================================= -->
 	<div id="wrapper" class="clearfix">
+
 			@yield('content')
+
 	</div><!-- #wrapper end -->
 
 	@foreach($template->js as $jsKey => $jsValue)
-		@if($jsValue['asset'] == 'true')
+		@if($jsValue['asset'] == 'true' && $jsKey !== 'menu-easing')
 			<script src="{{ asset($jsValue['href']) }}"></script>
 		@endif
 		@if($jsValue['asset'] == 'false')
@@ -42,5 +44,14 @@
 		@endif
 	@endforeach
 	@yield('scripts')
+	<script>
+
+		// Hover Script
+		jQuery(".img-hover-wrap").hover3d({
+			selector: ".img-hover-card",
+			shine: false,
+		});
+
+	</script>
 </body>
 </html>
